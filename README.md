@@ -1,7 +1,7 @@
 # utils
 utils for go
 
-- strings 字符串相关
+- string 字符串相关
 - slice 切片相关
 - map 映射相关
 - file 文件操作相关
