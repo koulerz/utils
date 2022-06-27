@@ -31,7 +31,7 @@ utils for go
   - GetFiles() []string
   - GetAllDirs() []string
   - GetAllFiles() []string
-- kcommand
+- kconsole
   - IsCommandExist(name string) bool
 - kvalidator
   - IsString() bool
