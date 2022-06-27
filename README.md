@@ -33,7 +33,7 @@ utils for go
   - GetAllFiles() []string
 - kcommand
   - IsCommandExist(name string) bool
-- kvalid
+- kvalidator
   - IsString() bool
   - IsInt() bool
   - IsMobile() bool
