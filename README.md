@@ -42,8 +42,6 @@ utils for go
 - krand
   - GetRandInt() int
   - GetRandString() string
-- ktime
-  - GetNowTimestamp() int64
-  - GetNowDatetime() string
-  - GetTodayStartTimestamp() int64
-  - GetTodayEndTimestamp() int64
+
+# other
+- [time](https://github.com/golang-module/carbon)
