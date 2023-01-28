@@ -8,7 +8,6 @@ utils for go
 - kcommand 命令行相关
 - kvalid 验证相关
 - krand 随机数相关
-- ktime 时间相关
 
 # details
 - kstrings
@@ -37,11 +36,10 @@ utils for go
   - IsString() bool
   - IsInt() bool
   - IsMobile() bool
-- kencry
-  - Md5() string
 - krand
   - GetRandInt() int
   - GetRandString() string
 
 # other
 - [time](https://github.com/golang-module/carbon)
+- [encode/encry](https://github.com/golang-module/dongle)
