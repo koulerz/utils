@@ -3,6 +3,7 @@ package kfile
 import (
 	"bytes"
 	"os"
+	"path/filepath"
 )
 
 // IsPathExist 判断路径是否存在
@@ -90,6 +91,10 @@ func AppendFile(name string, data []byte) error {
 // CreateFile 创建文件
 // 若路径不存在则创建
 func CreateFile(path string) error {
+	err := CreateDir(filepath.Dir(path))
+	if err != nil {
+		return err
+	}
 	f, err := os.Create(path)
 	if err != nil {
 		return err
