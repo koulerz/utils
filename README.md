@@ -43,3 +43,6 @@ utils for go
 # other
 - [time](https://github.com/golang-module/carbon)
 - [encode/encry](https://github.com/golang-module/dongle)
+
+# 参考
+- [golang-slices](https://pkg.go.dev/golang.org/x/exp/slices)
