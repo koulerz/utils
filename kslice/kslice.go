@@ -18,7 +18,7 @@ func Reverse[T any](s []T) []T {
 
 // DeleteKeys 删除指定 key 的元素
 func DeleteKeys[T any](s []T, ks []int) []T {
-	var res = make([]T, len(s)-len(ks))
+	var res = make([]T, 0, len(s)-len(ks))
 	for k, v := range s {
 		if !Contains(ks, k) {
 			res = append(res, v)
@@ -29,7 +29,7 @@ func DeleteKeys[T any](s []T, ks []int) []T {
 
 // DeleteValues 删除指定 values 的元素
 func DeleteValues[T comparable](s []T, vs []T) []T {
-	var res = make([]T, len(s)-len(vs))
+	var res = make([]T, 0, len(s)-len(vs))
 	for _, v := range s {
 		if !Contains(vs, v) {
 			res = append(res, v)
@@ -44,18 +44,16 @@ func Unique[T comparable](s []T) []T {
 	for _, v := range s {
 		record[v]++
 	}
-	var res = make([]T, len(s))
-	for k, v := range record {
-		if v == 1 {
-			res = append(res, k)
-		}
+	var res = make([]T, 0, len(s))
+	for k := range record {
+		res = append(res, k)
 	}
 	return res
 }
 
 // Filter 根据自定义方法过滤切片元素
 func Filter[T any](s []T, f func(T) bool) []T {
-	var res = make([]T, len(s))
+	var res = make([]T, 0, len(s))
 	for _, v := range s {
 		if f(v) {
 			res = append(res, v)
@@ -66,7 +64,7 @@ func Filter[T any](s []T, f func(T) bool) []T {
 
 // Map 将自定义方法应用于每个切片元素并返回
 func Map[E, T any](s []E, f func(E) T) []T {
-	var res = make([]T, len(s))
+	var res = make([]T, 0, len(s))
 	for _, v := range s {
 		res = append(res, f(v))
 	}
@@ -148,7 +146,7 @@ func Intersect[T comparable](s1, s2 []T) []T {
 		record[v]++
 	}
 
-	var res = make([]T, length)
+	var res = make([]T, 0, length)
 	for k, v := range record {
 		if v == 2 {
 			res = append(res, k)
@@ -171,7 +169,7 @@ func Difference[T comparable](s1, s2 []T) []T {
 		record[v]++
 	}
 
-	var res = make([]T, len(s1)+len(s2))
+	var res = make([]T, 0, len(s1)+len(s2))
 	for k, v := range record {
 		if v == 1 {
 			res = append(res, k)
