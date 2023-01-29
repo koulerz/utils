@@ -55,7 +55,7 @@ func ReadFile(name string) ([]byte, error) {
 	return os.ReadFile(name)
 }
 
-// ReadLines 按行读取文件
+// ReadLines 读取文件行
 func ReadLines(name string) ([][]byte, error) {
 	cont, err := os.ReadFile(name)
 	if err != nil {

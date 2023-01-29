@@ -41,6 +41,12 @@ utils for go
 - **IsDirExist(path string) bool** 判断目录是否存在
 - **IsDir(path string) bool** 判断是否为目录
 - **IsFile(path string) bool** 判断是否为文件
+- **ReadFile(name string) ([]byte, error)** 读文件
+- **ReadLines(name string) ([][]byte, error)** 读取文件行
+- **WriteFile(name string, data []byte) error** 向文件写入内容
+- **AppendFile(name string, data []byte) error** 向文件追加内容
+- **CreateFile(path string) error** 创建文件
+- **CreateDir(path string) error** 创建目录
 
 # kcmd
 
@@ -55,23 +61,11 @@ utils for go
 - **RandUppercaseStr(n int) string** 返回一个指定长度的随机大写字母字符串
 - **RandLowercaseStr(n int) string** 返回一个指定长度的随机小写字母字符串
 
-# TODO
-
-- kfile
-  - CreateFile() \*File
-  - CreateDir() bool
-  - DeleteFile() bool
-  - DeleteDir() bool
-  - GetDirs() []string
-  - GetFiles() []string
-  - GetAllDirs() []string
-  - GetAllFiles() []string
-
-# libs
+# Libs
 
 - **date/time** https://github.com/golang-module/carbon
 - **encode/encry** https://github.com/golang-module/dongle
 
-# 参考
+# Reference
 
 - [golang-slices](https://pkg.go.dev/golang.org/x/exp/slices)
