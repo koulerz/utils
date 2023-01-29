@@ -86,3 +86,23 @@ func AppendFile(name string, data []byte) error {
 	}
 	return nil
 }
+
+// CreateFile 创建文件
+// 若路径不存在则创建
+func CreateFile(path string) error {
+	f, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	err = f.Close()
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+// CreateDir 创建目录
+// 若路径不存在则以 0755 权限创建
+func CreateDir(path string) error {
+	return os.MkdirAll(path, 0755)
+}
