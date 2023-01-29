@@ -16,8 +16,8 @@ func Reverse[T any](s []T) []T {
 	return s
 }
 
-// DeleteByKeys 删除指定 key 的元素
-func DeleteByKeys[T any](s []T, ks []int) []T {
+// DeleteKeys 删除指定 key 的元素
+func DeleteKeys[T any](s []T, ks []int) []T {
 	var res = make([]T, len(s)-len(ks))
 	for k, v := range s {
 		if !Contains(ks, k) {
@@ -27,8 +27,8 @@ func DeleteByKeys[T any](s []T, ks []int) []T {
 	return res
 }
 
-// DeleteByValues 删除指定 values 的元素
-func DeleteByValues[T comparable](s []T, vs []T) []T {
+// DeleteValues 删除指定 values 的元素
+func DeleteValues[T comparable](s []T, vs []T) []T {
 	var res = make([]T, len(s)-len(vs))
 	for _, v := range s {
 		if !Contains(vs, v) {
