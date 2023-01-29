@@ -1,4 +1,4 @@
-module utils
+module github.com/koulerz/utils
 
 go 1.19
 
