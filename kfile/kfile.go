@@ -66,14 +66,25 @@ func ReadLines(name string) ([][]byte, error) {
 }
 
 // WriteFile 向文件写入内容
+//
 // 若文件不存在，将以 0666 权限创建新文件
 func WriteFile(name string, data []byte) error {
+	err := CreateDir(filepath.Dir(name))
+	if err != nil {
+		return err
+	}
 	return os.WriteFile(name, data, 0666)
 }
 
 // AppendFile 向文件追加内容
+//
 // 若文件不存在，将以 0666 权限创建新文件
+// 若目录不存在，将以 0755 权限创建目录
 func AppendFile(name string, data []byte) error {
+	err := CreateDir(filepath.Dir(name))
+	if err != nil {
+		return err
+	}
 	f, err := os.OpenFile(name, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil {
 		return err
@@ -89,7 +100,9 @@ func AppendFile(name string, data []byte) error {
 }
 
 // CreateFile 创建文件
-// 若路径不存在则创建
+//
+// 若文件已存在则覆盖已存在的文件
+// 若目录不存在则以 0755 权限创建
 func CreateFile(path string) error {
 	err := CreateDir(filepath.Dir(path))
 	if err != nil {
@@ -107,6 +120,7 @@ func CreateFile(path string) error {
 }
 
 // CreateDir 创建目录
+//
 // 若路径不存在则以 0755 权限创建
 func CreateDir(path string) error {
 	return os.MkdirAll(path, 0755)
