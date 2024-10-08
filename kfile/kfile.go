@@ -20,7 +20,13 @@ func IsPathExist(path string) bool {
 }
 
 // IsFileExists 判断文件是否存在
+// Deprecated: Use IsFileExist instead
 func IsFileExists(path string) bool {
+	return IsFile(path)
+}
+
+// IsFileExist 判断文件是否存在
+func IsFileExist(path string) bool {
 	return IsFile(path)
 }
 
