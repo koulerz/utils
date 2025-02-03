@@ -65,7 +65,5 @@ utils for go
 
 - **date/time** https://github.com/golang-module/carbon
 - **encode/encry** https://github.com/golang-module/dongle
-
-# Reference
-
-- [golang-slices](https://pkg.go.dev/golang.org/x/exp/slices)
+- **mapset** https://github.com/deckarep/golang-set
+- **validator** https://github.com/go-playground/validator
